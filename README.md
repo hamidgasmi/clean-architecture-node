@@ -1,1 +1,3 @@
-# clean-architecture-node
+# Clean Architecture and More ...
+
+This repo implements the clean architecture from Robert C. Martin (the Legendary “Uncle Bob”) Practical Software Architecture Solutions book and many coding standards/conventions.
