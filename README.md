@@ -59,14 +59,26 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Whitepapers & Books</summary>
 
+- [Clean Architecture: A Craftsman's Guide to Software Structure and Design](https://www.goodreads.com/book/show/18043011-clean-architecture)
+
 </details>
 
 <details>
 <summary>Talks & Courses</summary>
 
+- The Clean Architecture:
+    - [Robert C Martin - Clean Architecture](https://youtu.be/Nltqi7ODZTM)
+
 </details>
 
 <details>
 <summary>Articles</summary>
+
+- The Clean Architecture:
+    - [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) by Robert C. Martin (2012)
+    - [OOP Business Applications: Entity, Boundary, Interactor](https://beberlei.de/2012/08/13/oop_business_applications_entity_boundary_interactor.html) by Benjamin Eberlei (2012)
+    - [A couple of thoughts on Clean Architecture](https://blog.sourced-bvba.be/article/2017/02/14/thoughts-on-clean-architecture/) by Lieven Doclo (2017)
+    - [Clean Architecture Is Screaming](https://dzone.com/articles/clean-architecture-is-screaming) by Java Zone (2017)
+    - [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/) by Herberto Graça (2017)
 
 </details>
