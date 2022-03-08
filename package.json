@@ -1,0 +1,27 @@
+{
+  "name": "clean-architecture-node",
+  "version": "1.0.0",
+  "description": "This repo implements the clean architecture from Robert C. Martin (the Legendary “Uncle Bob”) Practical Software Architecture Solutions book and many coding standards/conventions.",
+  "main": "app.ts",
+  "scripts": {
+    "test": "test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidgasmi/clean-architecture-node.git"
+  },
+  "keywords": [
+    "nodejs",
+    "clean-architecture",
+    "conventions"
+  ],
+  "author": "Hamid Gasmi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamidgasmi/clean-architecture-node/issues"
+  },
+  "homepage": "https://github.com/hamidgasmi/clean-architecture-node#readme",
+  "devDependencies": {
+    "validate-npm-package-name": "^3.0.0"
+  }
+}
