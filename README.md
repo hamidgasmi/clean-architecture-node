@@ -53,15 +53,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [More about difference between dependencies, devDependencies and peerDependencies](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies?answertab=scoredesc#tab-top)
 
 </details>
-
-
     
-
-
-
-
-
-
 ## References
 
 <details>
