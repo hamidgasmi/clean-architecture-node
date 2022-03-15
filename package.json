@@ -41,6 +41,42 @@
     "typescript": "^4.6.2"
   },
   "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "produce-source-map": true,
+    "statements": 85,
+    "branches": 85,
+    "functions": 85,
+    "lines": 85,
+    "waternarks": {
+      "lines": [
+        84.99,
+        85
+      ],
+      "functions": [
+        84.99,
+        85
+      ],
+      "branches": [
+        84.99,
+        85
+      ],
+      "statements": [
+        84.99,
+        85
+      ]
+    },
+    "include": [
+      "src"
+    ],
+    "exclude": [],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ],
     "require": [
       "ts-node/register"
     ]
