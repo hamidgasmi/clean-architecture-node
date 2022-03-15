@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "This repo implements the clean architecture from Robert C. Martin (the Legendary “Uncle Bob”) Practical Software Architecture Solutions book and many coding standards/conventions.",
   "main": "app.ts",
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "*.src/*.ts"
+  ],
   "scripts": {
+    "clean": "npx rimraf build",
+    "build": "tsc --skipLibCheck -p ./tsconfig.json",
+    "build:full": "npm run clean && npm install && npm build",
+    "coverage": "nyc mocha --timeout 20000 -c --exit -r ts-node/register 'test/unit/**/*.spec.ts'",
     "test": "test:unit"
   },
   "repository": {
@@ -22,6 +31,18 @@
   },
   "homepage": "https://github.com/hamidgasmi/clean-architecture-node#readme",
   "devDependencies": {
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.7.0",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "dependencies": {
+    "awilix-koa": "^6.0.0",
+    "typescript": "^4.6.2"
+  },
+  "nyc": {
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
