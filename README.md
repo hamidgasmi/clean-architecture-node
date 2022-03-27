@@ -4,6 +4,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 ## Table of Contents
 - [Get started](#get-started)
+- [Domain](#domain)
 - [References](#references)
 
 ## Get started
@@ -53,7 +54,42 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [More about difference between dependencies, devDependencies and peerDependencies](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies?answertab=scoredesc#tab-top)
 
 </details>
-    
+
+## Domain
+
+
+<details>
+<summary>Business Requirements</summary>
+
+- 2 main entities: 
+    - Student and Course
+    - They can exists on their own and have their own life cycle
+- Student entity:
+    - It can enroll in one or several courses
+    - It keeps track of the courses it's enrolled in
+- Course entity:
+    - It keeps track of the number of students enrolled in it
+- The Application:
+    - It allows the creation and editing of a new `Course` or a new `Student` independently of each other
+    - It allows a `Student` to enroll in a `Course` if and only if the student has successfully registered their enrollment in the course
+    - It updates its entities accordingly when a `Student` successfully enroll to a `Course`
+
+</details>
+
+* These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+
+<details>
+<summary>Student</summary>
+
+- Properties: StudentId and Budget
+
+</details>
+
+<details>
+<summary>Course</summary>
+
+</details>
+
 ## References
 
 <details>
@@ -80,5 +116,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [A couple of thoughts on Clean Architecture](https://blog.sourced-bvba.be/article/2017/02/14/thoughts-on-clean-architecture/) by Lieven Doclo (2017)
     - [Clean Architecture Is Screaming](https://dzone.com/articles/clean-architecture-is-screaming) by Java Zone (2017)
     - [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/) by Herberto Graça (2017)
+- Domain-Driven Design:
+    - [The Clean Domain-Driven Design](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
 
 </details>
