@@ -69,14 +69,14 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - It keeps track of the courses it's enrolled in
 - Course entity:
     - It keeps track of the number of students enrolled in it
-- The Application:
+- Application:
     - It allows the creation and editing of a new `Course` or a new `Student` independently of each other
     - It allows a `Student` to enroll in a `Course` if and only if the student has successfully registered their enrollment in the course
     - It updates its entities accordingly when a `Student` successfully enroll to a `Course`
 
 </details>
 
-* These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+*These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
 
 ## References
 
