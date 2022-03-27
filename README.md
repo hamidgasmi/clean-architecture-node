@@ -78,18 +78,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 * These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
 
-<details>
-<summary>Student</summary>
-
-- Properties: StudentId and Budget
-
-</details>
-
-<details>
-<summary>Course</summary>
-
-</details>
-
 ## References
 
 <details>
