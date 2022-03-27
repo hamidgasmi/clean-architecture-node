@@ -57,7 +57,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 ## Domain
 
-
 <details>
 <summary>Business Requirements</summary>
 
@@ -77,6 +76,17 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 </details>
 
 *These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+
+## Application
+
+<details>
+<summary>Database Entity Relationship Diagram</summary>
+
+![database entity relationship diagram](./docs/bdd.drawio)
+
+</details>
+
+
 
 ## References
 
