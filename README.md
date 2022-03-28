@@ -62,7 +62,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 - 2 main entities: 
     - Student and Course
-    - They can exists on their own and have their own life cycle
+    - They can exist on their own and have their own life cycle
 - Student entity:
     - It can enroll in one or several courses
     - It keeps track of the courses it's enrolled in
