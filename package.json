@@ -35,6 +35,9 @@
     "npm": ">=8.3.1"
   },
   "devDependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "db-migrate-plugin-typescript": "^2.0.0",
     "mocha": "^9.2.2",
     "nyc": "^15.1.0",
     "ts-node": "^10.7.0",

@@ -55,6 +55,31 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 </details>
 
+<details>
+<summary>Create a new postgres db</summary>
+
+- Docker: `docker run -p 5432:5432 --name postgres-db -e POSTGRES_PASSWORD=password -d postgres`
+- Install the `db-migrate` package:
+    ```
+        npm i db-migrate --save-dev
+        npm i db-migrate-pg --save-dev
+        npm i db-migrate-plugin-typescript --save-dev
+    ```
+- Create a `database.json` file with the content below:
+    ```json
+        {
+            "dev": {
+                "driver": "pg",
+                "user": "postgres",
+                "password": "password",
+                "host": "localhost",
+                "database": "postgres"
+            }
+        }
+    ```
+
+</details>
+
 ## Domain
 
 <details>
@@ -85,8 +110,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 ![database entity relationship diagram](./docs/bdd.drawio)
 
 </details>
-
-
 
 ## References
 
