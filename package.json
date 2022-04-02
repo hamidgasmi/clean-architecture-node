@@ -12,6 +12,8 @@
     "clean": "npx rimraf build",
     "build": "tsc --skipLibCheck -p ./tsconfig.json",
     "build:full": "npm run clean && npm install && npm build",
+    "start": "npm run build && node build/src/app.js runApp",
+    "start:dev": "npm run start",
     "coverage": "nyc mocha --timeout 20000 -c --exit -r ts-node/register 'test/unit/**/*.spec.ts'",
     "test": "test:unit"
   },
