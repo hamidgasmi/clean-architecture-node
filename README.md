@@ -137,6 +137,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 - Use unique identifier headers: `x-request-id`, `x-trace-id` or `x-correlation-id`
     - [Correlation IDs for microservices architectures](https://hilton.org.uk/blog/microservices-correlation-id)
+- Return resource only when requested: use header `x-return-resource`
 
 </details>
 
