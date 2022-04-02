@@ -80,6 +80,25 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 </details>
 
+<details>
+<summary>Useful packages</summary>
+
+- shx: 
+- husky:
+- eslint:
+- license-checker:
+- nyc:
+- sinon:
+
+</details>
+
+<details>
+<summary>Useful VS Code extensions</summary>
+
+- Better Comments:
+
+</details>
+
 ## Domain
 
 <details>
@@ -110,6 +129,17 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 ![database entity relationship diagram](./docs/bdd.drawio.svg)
 
 </details>
+
+## Good practices:
+
+<details>
+<summary>Rest API</summary>
+
+- Use unique identifier headers: `x-request-id`, `x-trace-id` or `x-correlation-id`
+    - [Correlation IDs for microservices architectures](https://hilton.org.uk/blog/microservices-correlation-id)
+
+</details>
+
 
 ## References
 
