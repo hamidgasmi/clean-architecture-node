@@ -87,26 +87,26 @@
     "check-coverage": true,
     "per-file": true,
     "produce-source-map": true,
-    "statements": 85,
-    "branches": 85,
-    "functions": 85,
-    "lines": 85,
+    "statements": 90,
+    "branches": 90,
+    "functions": 90,
+    "lines": 90,
     "waternarks": {
       "lines": [
-        84.99,
-        85
+        89.99,
+        90
       ],
       "functions": [
-        84.99,
-        85
+        89.99,
+        90
       ],
       "branches": [
-        84.99,
-        85
+        89.99,
+        90
       ],
       "statements": [
-        84.99,
-        85
+        89.99,
+        90
       ]
     },
     "include": [
