@@ -1,9 +1,8 @@
 import { route, GET } from 'awilix-koa'
 import { Context } from 'koa'
 import { StatusCodes } from 'http-status-codes'
-import { Routes } from '../common/enums'
 import { cpus, freemem, platform, release, totalmem, uptime } from 'os'
-import packageJSON = require('../../../package.json')
+import { Routes } from '../common/enums'
 
 interface AppStatus {
   nodeVersion: string
