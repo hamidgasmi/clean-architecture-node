@@ -107,7 +107,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Database Entity Relationship Diagram</summary>
 
-![database entity relationship diagram](./docs/bdd.drawio)
+![database entity relationship diagram](./docs/bdd.drawio.svg)
 
 </details>
 
