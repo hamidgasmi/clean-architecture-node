@@ -25,4 +25,19 @@ export class Middleware {
         ctx.state.traceid = ctx.request.get(Headers.TraceId)
         await next()
     }
+
+    static async cors(ctx: Context, next: Next): Promise<void> {
+        // todo: to implement
+        await next()
+    }
+
+    static async authenticator(ctx: Context, next: Next): Promise<void> {
+        // todo: to implement
+        await next()
+    }
+
+    static async errorHandler(ctx: Context, next: Next): Promise<void> {
+        // todo: to implement
+        await next()
+    }    
 }

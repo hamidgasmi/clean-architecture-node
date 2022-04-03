@@ -28,10 +28,10 @@ export async function main (): Promise<string | void> {
     app
     .use(scopePerRequest(container))
     .use(Middleware.logger)
-    //.use(errorHandler)
+    .use(Middleware.errorHandler)
     .use(Middleware.validator)
-    //.use(corsMiddleware)
-    //.use(authenticator(jwtAuth, envSettings))
+    .use(Middleware.cors)
+    .use(Middleware.authenticator)
     .use(compress())
     .use(koaBodyParser())
     .use(controllers)
