@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "5efd89b2-6524-498f-8782-e22de4080dd3",
+		"name": "clean-architecture-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/get status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-trace-id",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Post\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/status",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"status"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "/status/json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-trace-id",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Post\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/status/json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"status",
+						"json"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "/health",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-trace-id",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Post\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		},
+		{
+			"name": "/ready",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-trace-id",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"First Post\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/ready",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ready"
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		}
+	]
+}

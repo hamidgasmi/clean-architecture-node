@@ -18,7 +18,7 @@ interface AppStatus {
 @route(Routes.StatusCheck)
 export class StatusController {
   
-  @route('/')
+  @route('')
   @GET()
   async getStatus (ctx: Context): Promise<void> {
     ctx.body = this.getAppStatus()

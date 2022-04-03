@@ -5,7 +5,7 @@ import { Routes } from '../common/enums'
 
 @route(Routes.ReadyCheck)
 export class ReadyController {
-  @route('/')
+  @route('')
   @GET()
   async getReadyStatus (ctx: Context): Promise<void> {
     ctx.status = StatusCodes.OK
