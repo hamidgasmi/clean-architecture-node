@@ -15,7 +15,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 - Install nvm
 - Install node:
     - Run `nvm install <major.minor.patch>` E.g.: `nvm install 16.14.0`
-    - Run `nvm use <major.minor.patch>` E.g.: `nvm use 16.14.01`
+    - Run `nvm use <major.minor.patch>` E.g.: `nvm use 16.14.0`
 - For more details:
     - [Releases](https://nodejs.org/en/about/releases/)
 
