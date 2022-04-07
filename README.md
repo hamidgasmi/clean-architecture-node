@@ -141,6 +141,73 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 </details>
 
+<details>
+<summary>Clean Code: Functions</summary>
+
+- Should be small => Should do exactly One Thing (Single responsability principle)
+- Same level of abstractions: should contain same level of abstraction (high or low level)
+    ```
+        // Bad example
+        function saveUser(name, email) {
+            if !isValid(name) { // high abstraction level
+                return false
+            }
+            if !email.include('@) { // Low abstraction level
+                return false
+            }
+        }
+    ```
+- Should do work that's one level of abstraction below their name
+    ```
+        // Good example
+        function isValidEmail(email) {
+            return email.include('@) ? true : false
+        }
+    ```
+    ```
+        // Bad example
+        function saveUser(name, email) {
+            if (!name.length === 0) { // too low abstraction level
+                return false
+            }
+            if !email.include('@) { // too Low abstraction level
+                return false
+            }
+            //...
+        }
+    ```
+- Public methods: fail fast by using guards 1st. (defensive programming)
+- Pure functions are better: 
+    - stateless, no side effect
+    - Exception is a side effect: catch them
+    - pass parameters instead of using global variables
+    - They're easy to unit test
+- Immutability?
+
+</details>
+
+<details>
+<summary>Clean Code: Classes</summary>
+
+- Write high cohesive class:
+    - Class cohesion: how much are your class methods using the class properties
+    - Maximum Cohesion: all methods each use all properties (highly cohesive object). Properties could be private
+    - No Cohesion: all methods don't use any class properties. Properties are managed outside of the class (properties are public).
+- Law of Demeter: 
+    - Code in a method may only access direct internals (properties and methods) of:
+        - The object it belongs to
+        - Objects that are stored in properties of that object
+        - Objects which are received as method parameters
+        - Objects which are created in the method
+    - E.g. avoid accessing object of object: `this.customer.lastPurshase.date`
+- Tell, don't ask:
+    - Have other classes to do the job for you (instead of asking for data to do the job)
+- Follow SOLID:
+    - S (SRP: the Single-Responsibility principle): classes should have a single responsibility, it shouldn't change for more than one reason.
+    - O (OCP: the Open-Close principle): a class should be open for extension but closed for modification (Polymorphism, composition)
+    - L (LSP: the Liskov Substitution principle): objects should be replaceable with instances of their subclasses without altering the behavior.
+    - I (ISP: the Interface Segregation principle): many client-specific interfaces are better than one general purpose interface.
+    - D (DIP: the Dependency Inversion principle): you should depend upon abstractions, not concretions
 
 ## References
 
