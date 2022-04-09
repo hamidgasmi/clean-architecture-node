@@ -133,6 +133,12 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 ## Good practices:
 
 <details>
+<summary>Web Dev standards</summary>
+
+- [Header names: Deprecating the "X-" Prefix and Similar Constructs in Application Protocols](https://www.rfc-editor.org/rfc/rfc6648)
+</details>
+
+<details>
 <summary>Rest API</summary>
 
 - Use unique identifier headers: `x-request-id`, `x-trace-id` or `x-correlation-id`
