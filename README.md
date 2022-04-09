@@ -144,7 +144,8 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Clean Code: Functions</summary>
 
-- Should be small => Should do exactly One Thing (Single responsability principle)
+- It shouldn't accept more than 3 parameters: use a data-structure as a parameter instead of lot of parameters
+- It should be small => Should do exactly One Thing (Single responsability principle)
 - Same level of abstractions: should contain same level of abstraction (high or low level)
     ```
         // Bad example
@@ -177,12 +178,17 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
         }
     ```
 - Public methods: fail fast by using guards 1st. (defensive programming)
-- Pure functions are better: 
-    - stateless, no side effect
-    - Exception is a side effect: catch them
-    - pass parameters instead of using global variables
-    - They're easy to unit test
-- Immutability?
+- Apply Functional programming principles:
+    - Avoid mutation (keep objects immutable): save you from concurrency issues, temporal coupling, etc.
+    - Use Pure functions (honest signatures):
+        - Avoid side effects (throwing an exception is a side effect)
+        - Avoid dihonest signatures (throwing an exception makes the function dishonest)
+        - Avoid shared states (pass parameters instead of using global variables)
+        - Catch recoverable exceptions (system and user exceptions)
+    - Use Function Composition
+    - Use Declarative code instead of Imperative code
+- CQS principle
+    - Tester-Doer pattern: if we want to allow users of our api to avoid dealing with exceptions, then provide a tester property.
 
 </details>
 
@@ -202,6 +208,8 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - E.g. avoid accessing object of object: `this.customer.lastPurshase.date`
 - Tell, don't ask:
     - Have other classes to do the job for you (instead of asking for data to do the job)
+- Apply Functional programming principles:
+    - Avoid mutation (keep objects immutable)
 - Follow SOLID:
     - S (SRP: the Single-Responsibility principle): classes should have a single responsibility, it shouldn't change for more than one reason.
     - O (OCP: the Open-Close principle): a class should be open for extension but closed for modification (Polymorphism, composition)
