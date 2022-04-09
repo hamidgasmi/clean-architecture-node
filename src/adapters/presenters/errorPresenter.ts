@@ -14,7 +14,7 @@ export class ErrorPresenter implements IPresenter {
 
   present(ctx: Context, model: IUseCaseOut): void {
 
-    const errorResponse = this._getErrorResponse(ctx.state.vctraceid, model)
+    const errorResponse = this._getErrorResponse(ctx.state.traceid, model)
     if (errorResponse) {
       ctx.status = errorResponse.status
 
