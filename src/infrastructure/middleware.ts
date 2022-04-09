@@ -36,6 +36,11 @@ export class Middleware {
         await next()
     }
 
+    static async authorizer(ctx: Context, next: Next): Promise<void> {
+        // todo: to implement
+        await next()
+    }
+
     static async errorHandler(ctx: Context, next: Next): Promise<void> {
         // todo: to implement
         await next()
