@@ -135,7 +135,10 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Web Dev standards</summary>
 
-- [Header names: Deprecating the "X-" Prefix and Similar Constructs in Application Protocols](https://www.rfc-editor.org/rfc/rfc6648)
+- Header names:
+    - [RFC: Deprecating the "X-" Prefix and Similar Constructs in Application Protocols](https://www.rfc-editor.org/rfc/rfc6648)
+    - [Stackoverflow: For more details](https://stackoverflow.com/questions/3561381/custom-http-headers-naming-conventions)
+
 </details>
 
 <details>
