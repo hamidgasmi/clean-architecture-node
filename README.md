@@ -153,7 +153,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Clean Code: Functions</summary>
 
-- It shouldn't accept more than 3 parameters: use a data-structure as a parameter instead of lot of parameters
+- It shouldn't accept more than 3 parameters: use a data-structure as a parameter instead of having a lot of parameters
 - It should be small => Should do exactly One Thing (Single responsability principle)
 - Same level of abstractions: should contain same level of abstraction (high or low level)
     ```
