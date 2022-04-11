@@ -49,6 +49,7 @@
     "awilix": "^6.1.0",
     "awilix-koa": "^6.0.0",
     "http-status-codes": "^2.2.0",
+    "joi": "^17.6.0",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-bodyparser": "^4.3.0",
