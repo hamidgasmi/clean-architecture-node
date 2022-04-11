@@ -240,7 +240,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
         - Use exception only to state a bug in our application (when a error break a contract)
         - Catch all unknown exceptions in a generic exception handler at the highest level possible => middleware
         - Catch all expected (known) failures at the lowest level possible
-    - Avoid primitive obsession:
+    - Avoid primitive types obsession:
         - Use Value-Object
         - Convert primitives into Value-Objects on the boundary of the domain model
         - Handle input error at the boundaries of the domain model
@@ -309,5 +309,18 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/) by Herberto Graça (2017)
 - Domain-Driven Design:
     - [The Clean Domain-Driven Design](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+- Dev principles:
+    - [Fail Fast principle](https://enterprisecraftsmanship.com/posts/fail-fast-principle/)
+- Database:
+    - [Database versioning best practices](https://enterprisecraftsmanship.com/posts/database-versioning-best-practices/)
+
+</details>
+
+
+<details>
+<summary>todo</summary>
+
+- [Do we need a Maybe Monad in JavaScript](https://www.dotnetcurry.com/patterns-practices/1510/maybe-monad-csharp)
+- [ Clean Architecture + CQRS](https://www.youtube.com/watch?v=NzcZcim9tp8)
 
 </details>
