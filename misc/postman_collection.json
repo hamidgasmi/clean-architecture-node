@@ -153,6 +153,47 @@
 				"description": "test"
 			},
 			"response": []
+		},
+		{
+			"name": "/courses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-trace-id",
+						"value": "test",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"Clean Architecture with nodejs\",\r\n   \"topic\": \"Software Architecture\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:3000/v1/courses",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
