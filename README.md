@@ -5,6 +5,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 ## Table of Contents
 - [Get started](#get-started)
 - [Domain](#domain)
+- [Good practices](#good-practices)
 - [References](#references)
 
 ## Get started
@@ -89,6 +90,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 - license-checker:
 - nyc:
 - sinon:
+- joi: data validator
 
 </details>
 
@@ -121,8 +123,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 *These example and requirements are taken from [here](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
 
-## Application
-
 <details>
 <summary>Database Entity Relationship Diagram</summary>
 
@@ -130,7 +130,14 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 </details>
 
-## Good practices:
+<details>
+<summary>Application Diagram</summary>
+
+![Application diagram](./docs/cleanArchitectureNodeDiagrams.drawio.svg)
+
+</details>
+
+## Good practices
 
 <details>
 <summary>Web Dev standards</summary>
@@ -187,15 +194,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
         }
     ```
 - Public methods: fail fast by using guards 1st. (defensive programming)
-- Apply Functional programming principles:
-    - Avoid mutation (keep objects immutable): save you from concurrency issues, temporal coupling, etc.
-    - Use Pure functions (honest signatures):
-        - Avoid side effects (throwing an exception is a side effect)
-        - Avoid dihonest signatures (throwing an exception makes the function dishonest)
-        - Avoid shared states (pass parameters instead of using global variables)
-        - Catch recoverable exceptions (system and user exceptions)
-    - Use Function Composition
-    - Use Declarative code instead of Imperative code
 - CQS principle
     - Tester-Doer pattern: if we want to allow users of our api to avoid dealing with exceptions, then provide a tester property.
 
@@ -226,6 +224,64 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - I (ISP: the Interface Segregation principle): many client-specific interfaces are better than one general purpose interface.
     - D (DIP: the Dependency Inversion principle): you should depend upon abstractions, not concretions
 
+</details>
+
+<details>
+<summary>Apply Functional programming principles</summary>
+
+- Avoid side effects:
+    - keep function signatures honest
+    - Avoid using global variables (value, data-structure, object)
+    - Avoid changing a value of a parameter
+    - Avoid printing or logging to the screen
+    - Avoid triggering an external process
+    - Avoid invoking other functions that aren't pure
+    - Avoid throwing an exception (see below how to handle exceptions)
+        - Throwing an exception makes the function dishonest
+        - Avoid using exceptions to control the program flow
+        - Use exception only to state a bug in our application (when a error break a contract)
+        - Catch all unknown exceptions in a generic exception handler at the highest level possible => middleware
+        - Catch all expected (known) failures at the lowest level possible
+    - Avoid primitive obsession:
+        - Use Value-Object
+        - Convert primitives into Value-Objects on the boundary of the domain model
+        - Handle input error at the boundaries of the domain model
+        - Convert Value-Objects back into primitives when they leave the domain model
+    - Avoid Nulls:
+        - Nulls make function dishonest
+        ```
+            // what if id isn't found? throw exception? return null? => The function signature doesn't show that => It's dishonest
+            async getUser(id: number): Promive<User> {
+            }
+        ```
+        - Use **union** type? You do not need to check the function body to find out if it can return a null reference
+        ```
+            // The function is now honest
+            async getUser(id: number): Promive<User | null> {
+            }
+        ```
+- Keep it stateless:
+    - Avoid shared states
+    - A shared state is any variable, object, memory space that exists in a shared scope
+    - A shared state is also the property of an object being passed between scopes
+    - A shared scope can include global scope or closure scopes
+- Avoid mutation (keep objects immutable):
+    - Objects in JavaScript are mutable (`strings` are immutable, though)
+    - Immutability save you from concurrency issues, temporal coupling issues
+    - Use `Object.freeze(myObj)` to force an object to be immutable
+    - Use `Object.assign({}, myObj)` to clone a ***shallow*** object (doesn't have another object inside)
+    - User **spread** operator to do a ***shallow*** clonning `const cloneArr = [ ...err ]` or `const cloneObj = { ...obj }`
+    - Use `JSON.parse(JSON.stringify(myObj))` to deep clone an object
+    - Use class constructor to clone an object (OOP way of cloning)
+- Use Function Composition?
+- Use Declarative code instead of Imperative code?
+- Use Railway-Oriented programming (Pipelining)
+    - Add extension methods to class (OnSuccess, OnFailure, OnBoth)
+    - [Railway oriented programming: Error handling in functional languages by Scott Wlaschin](https://vimeo.com/113707214)
+
+</details>
+
+
 ## References
 
 <details>
@@ -240,6 +296,8 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 - The Clean Architecture:
     - [Robert C Martin - Clean Architecture](https://youtu.be/Nltqi7ODZTM)
+- Railway oriented programming:
+    - [Error handling in functional languages by Scott Wlaschin](https://vimeo.com/113707214)
 
 </details>
 
