@@ -215,8 +215,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - E.g. avoid accessing object of object: `this.customer.lastPurshase.date`
 - Tell, don't ask:
     - Have other classes to do the job for you (instead of asking for data to do the job)
-- Apply Functional programming principles:
-    - Avoid mutation (keep objects immutable)
 - Follow SOLID:
     - S (SRP: the Single-Responsibility principle): classes should have a single responsibility, it shouldn't change for more than one reason.
     - O (OCP: the Open-Close principle): a class should be open for extension but closed for modification (Polymorphism, composition)
@@ -236,7 +234,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - Avoid printing or logging to the screen
     - Avoid triggering an external process
     - Avoid invoking other functions that aren't pure
-    - Avoid throwing an exception (see below how to handle exceptions)
+    - Avoid throwing an exception:
         - Throwing an exception makes the function dishonest
         - Avoid using exceptions to control the program flow
         - Use exception only to state a bug in our application (when a error break a contract)
@@ -280,7 +278,6 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [Railway oriented programming: Error handling in functional languages by Scott Wlaschin](https://vimeo.com/113707214)
 
 </details>
-
 
 ## References
 
