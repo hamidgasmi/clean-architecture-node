@@ -6,6 +6,7 @@ import { CreateCourseUseCase } from '../../application/useCases/createCourseUseC
 import { IControllersDeps } from '../common/IControllersDeps'
 import { Middleware } from '../../infrastructure/middleware'
 import { ICreateCourseIn } from '../../application/common/IUseCase'
+import Joi from 'joi'
 
 @route(Routes.ApiVersion + Routes.Courses)
 export class CoursesController {
@@ -18,9 +19,17 @@ export class CoursesController {
 
     const createCourseIn: ICreateCourseIn = {
       traceId: ctx.state.traceid,
-      courseName: ctx.request.body.title,
+      courseName: ctx.request.body.name,
       courseTopic: ctx.request.body.topic
     }
+
+    const courseSchema = Joi.object().keys({
+      traceId: Joi.string().required().trim().min(1),
+      courseName: Joi.string().required().trim().min(1).required(),
+      courseTopic: Joi.string().required().trim().min(1).required()
+    })
+    const validationResult = courseSchema.validate(createCourseIn)
+
     await this.useCase.execute(createCourseIn)
   }
 
