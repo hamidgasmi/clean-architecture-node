@@ -30,9 +30,9 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - hyphens are allowed
     - package name length cannot exceed 214
     - See package naming rules [here](https://github.com/npm/validate-npm-package-name/#naming-rules)
-- Run `npm init` in your project root folder (see package naming rules below)    
+- Run `npm init` in your project root folder (see package naming rules below)
     ```
-        package name: (clean-architecture-node) 
+        package name: (clean-architecture-node)
         version: (1.0.0)
         description: < your package description >
         entry point: (index.js) app.ts
@@ -84,7 +84,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Useful packages</summary>
 
-- shx: 
+- shx:
 - husky:
 - eslint:
 - license-checker:
@@ -98,6 +98,9 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <summary>Useful VS Code extensions</summary>
 
 - Better Comments:
+    - Ctrl+Shift+P (to brings up the Command Palette)
+    - Enter `>Open Settings (JSON)`
+    - Paste `better-comments.tags` available [vs_code_settings.json](./misc/vs_code_settings.json)
 
 </details>
 
@@ -106,7 +109,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Business Requirements</summary>
 
-- 2 main entities: 
+- 2 main entities:
     - Student and Course
     - They can exist on their own and have their own life cycle
 - Student entity:
@@ -145,6 +148,15 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 - Header names:
     - [RFC: Deprecating the "X-" Prefix and Similar Constructs in Application Protocols](https://www.rfc-editor.org/rfc/rfc6648)
     - [Stackoverflow: For more details](https://stackoverflow.com/questions/3561381/custom-http-headers-naming-conventions)
+- Email addresses:
+    - Regex:
+        - Use `[A-Za-zÀ-ÖØ-öø-ÿ]+` instead of `[a-zA-Z ]+`
+        - Clíodhna, Íonait, Marcán, Oisín, Bjørn, Håkon, Noël, and François will thank you ;)
+    - Length:
+        - Format: `localpart@domainpart`
+        - `localpart.length <= 64 bytes`
+        - `domainpart.length <= 255 bytes`
+        - [For more details](https://www.rfc-editor.org/errata/eid1690#:~:text=It%20should%20say%3A-,In%20addition%20to%20restrictions%20on%20syntax%2C%20there%20is%20a%20length,total%20length%20of%20320%20characters) 
 
 </details>
 
@@ -206,7 +218,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - Class cohesion: how much are your class methods using the class properties
     - Maximum Cohesion: all methods each use all properties (highly cohesive object). Properties could be private
     - No Cohesion: all methods don't use any class properties. Properties are managed outside of the class (properties are public).
-- Law of Demeter: 
+- Law of Demeter:
     - Code in a method may only access direct internals (properties and methods) of:
         - The object it belongs to
         - Objects that are stored in properties of that object
