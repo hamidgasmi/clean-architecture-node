@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { expect, assert } from 'chai'
-import { Result } from '../../src/result'
+import { Result } from '../../../../src/shared/core/result'
 
 describe('Result Unit Tests', () => {
 
