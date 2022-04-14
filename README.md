@@ -309,6 +309,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/) by Herberto Graça (2017)
 - Domain-Driven Design:
     - [The Clean Domain-Driven Design](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+    - [Domain-Driven Design with TypeScript](https://khalilstemmler.com/articles/categories/domain-driven-design/)
 - Dev principles:
     - [Fail Fast principle](https://enterprisecraftsmanship.com/posts/fail-fast-principle/)
 - Database:
