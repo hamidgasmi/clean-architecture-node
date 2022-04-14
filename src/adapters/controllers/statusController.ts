@@ -16,7 +16,7 @@ interface AppStatus {
 
 @route(Routes.StatusCheck)
 export class StatusController {
-  
+
   @route('')
   @GET()
   async getStatus (ctx: Context): Promise<void> {
@@ -44,7 +44,7 @@ export class StatusController {
   }
 
   private getCpuInfo(): string {
-    const cpuInfoList = cpus() 
+    const cpuInfoList = cpus()
     return (cpuInfoList && cpuInfoList.length) ? cpuInfoList[0].model : 'Unknown'
   }
 }
