@@ -7,6 +7,7 @@ import { IControllersDeps } from '../common/IControllersDeps'
 import { Middleware } from '../../infrastructure/middleware'
 import { ICreateCourseIn } from '../../application/common/IUseCase'
 import Joi from 'joi'
+import { Name } from '../../domain/valueObjects/name'
 
 @route(Routes.ApiVersion + Routes.Courses)
 export class CoursesController {
@@ -17,20 +18,20 @@ export class CoursesController {
   @before(Middleware.authorizer)
   async createCourse (ctx: Context): Promise<void> {
 
-    const createCourseIn: ICreateCourseIn = {
-      traceId: ctx.state.traceid,
-      courseName: ctx.request.body.name,
-      courseTopic: ctx.request.body.topic
+    const traceId = ctx.state.traceid
+    
+    const courseNameResult = Name.create(ctx.request.body.name, 'name')
+    if (courseNameResult.isFailure) {
+      // todo: return http 400 code
+
     }
 
-    const courseSchema = Joi.object().keys({
-      traceId: Joi.string().required().trim().min(1),
-      courseName: Joi.string().required().trim().min(1).required(),
-      courseTopic: Joi.string().required().trim().min(1).required()
-    })
-    const validationResult = courseSchema.validate(createCourseIn)
+    const courseTopicNameResult = Name.create(ctx.request.body.topic, 'topic')
+    if (courseNameResult.isFailure) {
+      // todo: return http 400 code
+    }
 
-    await this.useCase.execute(createCourseIn)
+    await this.useCase.execute({ traceId, courseName: courseNameResult.value, courseTopicName: courseTopicNameResult.value })
   }
 
   constructor (deps: IControllersDeps) {

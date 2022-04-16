@@ -19,22 +19,20 @@ export class Name extends ValueObject<NameProps> {
     super(props)
   }
 
-  public static create (props: NameProps): Result<Name> {
-    const nameResult = Guard.againstNullOrUndefined(props.name, 'username')
-    if (nameResult.isFailure) {
-      return Result.failure<Name>(nameResult.error)
-    }
+  public static create (props: NameProps, attributeName: string): Result<Name> {
 
-    const minLengthResult = Guard.againstAtLeast(Name.minLength, props.name)
+    const name = attributeName
+
+    const minLengthResult = Guard.againstAtLeast({ value: props.name, name }, Name.minLength)
     if (minLengthResult.isFailure) {
       return Result.failure<Name>(minLengthResult.error)
     }
 
-    const maxLengthResult = Guard.againstAtMost(Name.maxLength, props.name)
+    const maxLengthResult = Guard.againstAtMost({ value: minLengthResult.value, name }, Name.maxLength)
     if (maxLengthResult.isFailure) {
       return Result.failure<Name>(minLengthResult.error)
     }
 
-    return Result.success<Name>(new Name(props))
+    return Result.success<Name>(new Name({ name: maxLengthResult.value }))
   }
 }

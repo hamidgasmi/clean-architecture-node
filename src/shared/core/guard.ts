@@ -1,11 +1,12 @@
+import Joi from 'joi'
 import { Result } from './result'
 
-export interface IGuardArgument {
-  argument: any
-  argumentName: string
+export interface IGuardArgument<T> {
+  value: T
+  name: string
 }
 
-export type GuardArgumentCollection = IGuardArgument[]
+export type IGuardArguments<T> = IGuardArgument<T>[]
 
 /*
  * //todo: what if I use joi package here? 
@@ -14,27 +15,56 @@ export type GuardArgumentCollection = IGuardArgument[]
 **/
 export class Guard {
 
-  public static greaterThan (minValue: number, actualValue: number): Result<boolean> {
-    return actualValue > minValue
+  public static greaterThan (argument: IGuardArgument<number>, minValue: number): Result<boolean> {
+    return argument.value > minValue
       ? Result.success(true)
-      : Result.failure(`Number given {${actualValue}} is not greater than {${minValue}}`)
+      : Result.failure(`${argument.name} given {${argument.value}} is not greater than {${minValue}}`)
   }
 
-  public static againstAtLeast (numChars: number, text: string): Result<boolean> {
-    return text.length >= numChars
+  public static againstNullOrUndefined (argument: IGuardArgument<any>): Result<boolean> {
+    return argument.value
       ? Result.success(true)
-      : Result.failure(`Text is not at least ${numChars} chars.`)
+      : Result.failure(`${argument.value} is null or undefined`)
   }
 
-  public static againstAtMost (numChars: number, text: string): Result<boolean> {
-    return text.length <= numChars
-      ? Result.success(true)
-      : Result.failure(`Text is greater than ${numChars} chars.`)
+  public static againstAtLeast (argument: IGuardArgument<string>, numChars: number): Result<string> {
+    
+    const againstNullOrUndefinedResult = Guard.againstNullOrUndefined(argument)
+    if (againstNullOrUndefinedResult.isFailure) {
+      return Result.failure(againstNullOrUndefinedResult.error)
+    }
+
+    const value = argument.value
+      ? argument.value.trim()
+      : ''
+
+    return value.length >= numChars
+      ? Result.success(value)
+      : Result.failure(`${argument.name} is not at least ${numChars} chars.`)
   }
 
-  public static againstNullOrUndefined (argument: any, argumentName: string): Result<boolean> {
-    return (argument === null || argument === undefined)
-      ? Result.failure(`${argumentName} is null or undefined`)
-      : Result.success(true)
+  public static againstAtMost (argument: IGuardArgument<string>, numChars: number): Result<string> {
+
+    const value = argument.value
+      ? argument.value.trim()
+      : ''
+
+    return value.length <= numChars
+      ? Result.success(value)
+      : Result.failure(`${argument.name} is greater than ${numChars} chars.`)
+  }
+
+  // ! is Joi worth it for this type of validation?
+  public static againstAtMostJoi (argument: IGuardArgument<string>, numChars: number): Result<string> {
+    
+    const validationResult: Joi.ValidationResult<string> = Joi.string().required().trim().max(numChars).validate(argument.value)
+    if (validationResult.value) {
+      return Result.success(validationResult.value)
+    }
+    else {
+      return validationResult.error
+        ? Result.failure(validationResult.error.message)
+        : Result.failure(`${argument.name} is not valid.`)
+    }
   }
 }
