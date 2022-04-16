@@ -10,7 +10,7 @@ export type GuardArgumentCollection = IGuardArgument[]
 /*
  * //todo: what if I use joi package here? 
  *     - Domain value-object / entity will depend on it? 
- *     - I should use Dependency Inversion Principle to not break clean architecture
+ *     - I should use Dependency Inversion Principle to not break clean architecture rule
 **/
 export class Guard {
 
