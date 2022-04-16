@@ -5,8 +5,6 @@ import { OperationType } from '../../application/common/enums'
 import { CreateCourseUseCase } from '../../application/useCases/createCourseUseCase'
 import { IControllersDeps } from '../common/IControllersDeps'
 import { Middleware } from '../../infrastructure/middleware'
-import { ICreateCourseIn } from '../../application/common/IUseCase'
-import Joi from 'joi'
 import { Name } from '../../domain/valueObjects/name'
 
 @route(Routes.ApiVersion + Routes.Courses)
