@@ -30,9 +30,9 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - hyphens are allowed
     - package name length cannot exceed 214
     - See package naming rules [here](https://github.com/npm/validate-npm-package-name/#naming-rules)
-- Run `npm init` in your project root folder (see package naming rules below)    
+- Run `npm init` in your project root folder (see package naming rules below)
     ```
-        package name: (clean-architecture-node) 
+        package name: (clean-architecture-node)
         version: (1.0.0)
         description: < your package description >
         entry point: (index.js) app.ts
@@ -84,7 +84,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Useful packages</summary>
 
-- shx: 
+- shx:
 - husky:
 - eslint:
 - license-checker:
@@ -98,6 +98,9 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <summary>Useful VS Code extensions</summary>
 
 - Better Comments:
+    - Ctrl+Shift+P (to brings up the Command Palette)
+    - Enter `>Open Settings (JSON)`
+    - Paste `better-comments.tags` available [vs_code_settings.json](./misc/vs_code_settings.json)
 
 </details>
 
@@ -106,7 +109,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 <details>
 <summary>Business Requirements</summary>
 
-- 2 main entities: 
+- 2 main entities:
     - Student and Course
     - They can exist on their own and have their own life cycle
 - Student entity:
@@ -145,6 +148,15 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 - Header names:
     - [RFC: Deprecating the "X-" Prefix and Similar Constructs in Application Protocols](https://www.rfc-editor.org/rfc/rfc6648)
     - [Stackoverflow: For more details](https://stackoverflow.com/questions/3561381/custom-http-headers-naming-conventions)
+- Email addresses:
+    - Regex:
+        - Use `[A-Za-zÀ-ÖØ-öø-ÿ]+` instead of `[a-zA-Z ]+`
+        - Clíodhna, Íonait, Marcán, Oisín, Bjørn, Håkon, Noël, and François will thank you ;)
+    - Length:
+        - Format: `localpart@domainpart`
+        - `localpart.length <= 64 bytes`
+        - `domainpart.length <= 255 bytes`
+        - [For more details](https://www.rfc-editor.org/errata/eid1690#:~:text=It%20should%20say%3A-,In%20addition%20to%20restrictions%20on%20syntax%2C%20there%20is%20a%20length,total%20length%20of%20320%20characters) 
 
 </details>
 
@@ -206,7 +218,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - Class cohesion: how much are your class methods using the class properties
     - Maximum Cohesion: all methods each use all properties (highly cohesive object). Properties could be private
     - No Cohesion: all methods don't use any class properties. Properties are managed outside of the class (properties are public).
-- Law of Demeter: 
+- Law of Demeter:
     - Code in a method may only access direct internals (properties and methods) of:
         - The object it belongs to
         - Objects that are stored in properties of that object
@@ -240,7 +252,7 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
         - Use exception only to state a bug in our application (when a error break a contract)
         - Catch all unknown exceptions in a generic exception handler at the highest level possible => middleware
         - Catch all expected (known) failures at the lowest level possible
-    - Avoid primitive obsession:
+    - Avoid primitive types obsession:
         - Use Value-Object
         - Convert primitives into Value-Objects on the boundary of the domain model
         - Handle input error at the boundaries of the domain model
@@ -309,5 +321,19 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
     - [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/) by Herberto Graça (2017)
 - Domain-Driven Design:
     - [The Clean Domain-Driven Design](https://medium.com/@gushakov/clean-domain-driven-design-2236f5430a05)
+    - [Domain-Driven Design with TypeScript](https://khalilstemmler.com/articles/categories/domain-driven-design/)
+- Dev principles:
+    - [Fail Fast principle](https://enterprisecraftsmanship.com/posts/fail-fast-principle/)
+- Database:
+    - [Database versioning best practices](https://enterprisecraftsmanship.com/posts/database-versioning-best-practices/)
+
+</details>
+
+
+<details>
+<summary>todo</summary>
+
+- [Do we need a Maybe Monad in JavaScript](https://www.dotnetcurry.com/patterns-practices/1510/maybe-monad-csharp)
+- [ Clean Architecture + CQRS](https://www.youtube.com/watch?v=NzcZcim9tp8)
 
 </details>

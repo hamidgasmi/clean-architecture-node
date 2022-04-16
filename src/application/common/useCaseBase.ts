@@ -10,6 +10,6 @@ export abstract class UseCaseBase implements IUseCase {
     }
 }
 
-export interface IUseCaseDeps { 
+export interface IUseCaseDeps {
     //todo
 }
