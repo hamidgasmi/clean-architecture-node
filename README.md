@@ -291,6 +291,66 @@ This repo implements the clean architecture from Robert C. Martin (the Legendary
 
 </details>
 
+<details>
+<summary>Apply DDD principles</summary>
+
+
+- Entity vs. Value Object:
+
+Categories | Entity | Value Object
+--- | --- | ---
+DDD Concept | Primitive | Primitive
+Represents | a domain entity | a data
+Example | a User entity | a name
+Identity between 2 instances | Same Unique Identifier (key: int, UUID) | Structural Equality (same contents)
+Example | { id: 1, name: 'Hamid' } === { id: 1, name: 'hamid' } | "Hamid" === "Hamid"
+
+- Aggregate root: represents the key Entities of the application
+- Bounded Context:
+    
+</details>
+
+<details>
+<summary>Apply Design Patterns</summary>
+
+- How to handle Commands:
+    - See command object pattern in gang of four design patterns
+    - See command handler pattern common in CQRS architectures
+- Choose functional (aggregate root) cohesion to organize your application files/classes
+    - See Screaming Architecture 
+
+
+</details>
+
+<details>
+<summary>Apply TDD</summary>
+
+- Red-Green Refactoring
+    - Create a failing test
+    - Get the test to pass
+    - Refactor the code by keeping the tests pass
+- Test Automation Pyramid:
+    - Unit tests: 
+        - The cheapest and very fast... We should run a lot of them
+    - Acceptance tests (AT)
+        - They're to verify applications features
+        - They use the language of the business: use test framwork? specFlow/Jasmine? 
+        - They're Not as cheap as unit tests: they do not cover every business use case
+        - They focus on the domain (entities) and application (use cases) layers
+        - They do not focus on implementation details: user interface (use apis), database (use In-memory DB), external services (use mocks)
+    - Coded UI-tests:
+        - They are expensive
+        - They should be minimized
+        - Use smoke tests instead
+    - Smoke test:
+        - They are full-system tests that just verify that application runs when all the pieces are assembled at runtime
+        - They are expensive: they should be minimized
+    - Manual Tests:
+        - Expensive
+        - Do Exploratory tests instead to ensure a high quality use experience
+
+</details>
+
 ## References
 
 <details>
